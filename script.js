@@ -19,6 +19,19 @@ let clients= [
 
     }
 ]
+
+let dettes = [
+    {
+        id : 1,
+        client : "NIANG Mamadou",
+        montant : 10000,
+        date : "2021-08-12",
+        categorie : "Fidele",
+        description : "Achat de 10 sacs de riz",
+        etat : "Non paye",
+        
+    }
+]
 document.addEventListener("DOMContentLoaded", () => {
     genererTr(clients)
 
