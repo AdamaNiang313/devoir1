@@ -59,6 +59,26 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+function afficheClient(email) {
+    const client = clients.find(client => client.email === email);
+    if (client) {
+        document.getElementById('exampleModalLabel').textContent = `Fiche de ${client.nom} ${client.prenom}`;
+        tbodyDettes.innerHTML = "";
+        for (let dette of client.dettes) {
+            tbodyDettes.innerHTML += `<tr>
+                                        <td>${dette.montant}</td>
+                                        <td>${dette.date}</td>
+                                        <td>${dette.categorie}</td>
+                                        <td>${dette.description}</td>
+                                        <td>${dette.etat}</td>
+                                    </tr>`;
+        }
+        const modal = new bootstrap.Modal(document.getElementById('exampleModal2'));
+        modal.show();
+    }
+}
+
+
 function genererTr(clients) {
     tbody.innerHTML = ""
     for (let resultat of clients) {
@@ -72,3 +92,21 @@ function genererTr(clients) {
     }
 }
 
+function afficheClient(email) {
+    const client = clients.find(client => client.email === email);
+    if (client) {
+        document.getElementById('exampleModalLabel').textContent = `Fiche de ${client.nom} ${client.prenom}`;
+        tbodyDettes.innerHTML = "";
+        for (let dette of client.dettes) {
+            tbodyDettes.innerHTML += `<tr>
+                                        <td>${dette.montant}</td>
+                                        <td>${dette.date}</td>
+                                        <td>${dette.categorie}</td>
+                                        <td>${dette.description}</td>
+                                        <td>${dette.etat}</td>
+                                    </tr>`;
+        }
+        const modal = new bootstrap.Modal(document.getElementById('exampleModal2'));
+        modal.show();
+    }
+}
